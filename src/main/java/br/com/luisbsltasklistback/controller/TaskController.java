@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("tasks")
+@RequestMapping("/tasks")
 public class TaskController {
 	
-	@GetMapping("/")
+	@GetMapping
 	public String getTasks() {
 		return "Tasks List";
 	}
