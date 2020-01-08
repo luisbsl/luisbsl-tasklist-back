@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("tasks")
 public class TaskController {
 	
-	@GetMapping
+	@GetMapping("/")
 	public String getTasks() {
 		return "Tasks List";
 	}
