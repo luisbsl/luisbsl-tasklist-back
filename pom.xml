@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com</groupId>
 	<artifactId>luisbsl-tasklist-back</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>luisbsl-tasklist-back</name>
 	<description>Teste técnico da Supero para Dev Java Sênior</description>
 
