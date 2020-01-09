@@ -7,41 +7,42 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Task {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@NotBlank
+	@Column(nullable = false)
 	private String titulo;
-	
+
 	@NotNull
-	private Boolean status;
-	
-	private Boolean edicao;
-	
-	private Boolean remocao;
-	
-	private Boolean conclusao;
-	
+	@Column(columnDefinition = "tinyint(1) NOT NULL DEFAULT '1'")
+	private Boolean status = true;
+
+	@Column(columnDefinition = "tinyint(1) NOT NULL DEFAULT '0'")
+	private Boolean edicao = false;
+
+	@Column(columnDefinition = "tinyint(1) NOT NULL DEFAULT '0'")
+	private Boolean remocao = false;
+
+	@Column(columnDefinition = "tinyint(1) NOT NULL DEFAULT '0'")
+	private Boolean conclusao = false;
+
 	private String descricao;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(nullable = false, columnDefinition="dt_criacao default CURRENT_TIMESTAMP")
 	private Date dtCriacao = new Date();
 
 	public Task() {
 	}
 
-	public Task(@NotBlank String titulo, @NotNull Boolean status, Boolean edicao, Boolean remocao,
-			Boolean conclusao, String descricao) {
+	public Task(@NotBlank String titulo, @NotNull Boolean status, Boolean edicao, Boolean remocao, Boolean conclusao,
+			String descricao) {
 		super();
 		this.titulo = titulo;
 		this.status = status;
@@ -91,7 +92,7 @@ public class Task {
 		this.remocao = remocao;
 	}
 
-	public Boolean isConclusao() {
+	public Boolean getConclusao() {
 		return conclusao;
 	}
 
@@ -120,7 +121,6 @@ public class Task {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
 		return result;
 	}
 
@@ -138,11 +138,6 @@ public class Task {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (titulo == null) {
-			if (other.titulo != null)
-				return false;
-		} else if (!titulo.equals(other.titulo))
-			return false;
 		return true;
 	}
 
@@ -151,5 +146,5 @@ public class Task {
 		return "Task [id=" + id + ", titulo=" + titulo + ", status=" + status + ", edicao=" + edicao + ", remocao="
 				+ remocao + ", conclusao=" + conclusao + ", descricao=" + descricao + ", dtCriacao=" + dtCriacao + "]";
 	}
-	
+
 }

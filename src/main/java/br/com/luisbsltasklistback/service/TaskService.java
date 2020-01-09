@@ -1,9 +1,10 @@
-package br.com.luisbsltasklistback.repository;
+package br.com.luisbsltasklistback.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.luisbsltasklistback.model.Task;
+import br.com.luisbsltasklistback.repository.TaskRepository;
 
 @Service
 public class TaskService {
@@ -31,6 +32,7 @@ public class TaskService {
 		taskToUpdate.setDescricao(task.getDescricao());
 		taskToUpdate.setTitulo(task.getTitulo());
 		taskToUpdate.setEdicao(task.getEdicao());
+		taskToUpdate.setConclusao(task.getConclusao());
 		if(Boolean.FALSE.equals(taskToUpdate.getEdicao())) {
 			taskToUpdate.setEdicao(true);
 		}
