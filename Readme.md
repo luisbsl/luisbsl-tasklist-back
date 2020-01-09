@@ -30,4 +30,4 @@ https://luisbsl-tasklist-back.herokuapp.com/tasks
 
 ### Considerações
 
-Falta cobertura de testes unitários e de integfração
+Falta cobertura de testes unitários e de integração
