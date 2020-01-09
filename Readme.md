@@ -29,5 +29,7 @@ https://luisbsl-tasklist-back.herokuapp.com/tasks
 * DELETE - https://luisbsl-tasklist-back.herokuapp.com/tasks/id - Id
 
 ### Considerações
-
-Falta cobertura de testes unitários e de integração
+Pontos a melhorar
+* Cobertura de testes unitários e de integração
+* Documentação Swagger
+* Versionamento através de content negotiation - vnd.tasklist+json (back e front)
