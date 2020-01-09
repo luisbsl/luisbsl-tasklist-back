@@ -26,7 +26,7 @@ https://luisbsl-tasklist-back.herokuapp.com/tasks
 GET - https://luisbsl-tasklist-back.herokuapp.com/tasks
 POST - https://luisbsl-tasklist-back.herokuapp.com/tasks - Pass objeto json
 PUT - https://luisbsl-tasklist-back.herokuapp.com/tasks - Pass objeto json
-DELETE - https://luisbsl-tasklist-back.herokuapp.com/tasks - Pass objeto json
+DELETE - https://luisbsl-tasklist-back.herokuapp.com/tasks/id - Id
 
 ### Considerações
 
